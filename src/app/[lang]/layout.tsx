@@ -6,7 +6,7 @@ import ReduxProvider from "@/redux/provider";
 import "slick-carousel/slick/slick.css";
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
-import {NextIntlClientProvider, hasLocale} from 'next-intl';
+import {NextIntlClientProvider} from 'next-intl';
 
 import "swiper/css/bundle";
 import "./globals.scss";
