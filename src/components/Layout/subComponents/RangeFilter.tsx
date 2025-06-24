@@ -4,7 +4,7 @@ import { Range } from "react-range";
 import { useState } from "react";
 
 export default function RangeFilter() {
-  const [priceValues, setPriceValues] = useState([20, 80]);
+  const [priceValues, setPriceValues] = useState([200, 800]);
   const [areaValues, setAreaValues] = useState([100, 500]);
 
   return (
@@ -25,12 +25,12 @@ export default function RangeFilter() {
           <div className="slider-container">
             <Range
               step={1}
-              min={0}
-              max={100}
+              min={200}
+              max={1000}
               values={priceValues}
               onChange={(values) => setPriceValues(values)}
               renderTrack={({ props, children}) => {
-                const [min, max] = [0, 100];
+                const [min, max] = [200, 1000];
                 const left = ((priceValues[0] - min) / (max - min)) * 100;
                 const right = ((priceValues[1] - min) / (max - min)) * 100;
                 return (

@@ -1,0 +1,27 @@
+.customSelect {
+  appearance: none;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  color: inherit;
+}
+
+.customSelect:focus {
+  outline: none;
+}
+
+.customSelect option {
+  background: #fff;
+  color: #000;
+}
+
+
+
+
+.tp-hero-tab-box {
+  @media (max-width: 576px) {
+    justify-content: center !important;
+  }
+}

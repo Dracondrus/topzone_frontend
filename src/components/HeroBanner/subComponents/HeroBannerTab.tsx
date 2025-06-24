@@ -10,7 +10,7 @@ import { ITabContentProps } from "@/types/banner-d-t";
 export default function HeroBannerTabContent({ id, isActive, onSortChange }: ITabContentProps) {
     return (
         <div className={`tab-pane fade ${isActive ? 'show active' : ''}`} id={id} role="tabpanel">
-            <div className="tp-hero-tab-box d-flex align-items-center">
+            <div className="tp-hero-tab-box d-flex align-items-center justify-content-between ">
                <div className="tp-hero-tab-select tp-select">
                     <NiceSelect
                         options={propertyTypeOptions}

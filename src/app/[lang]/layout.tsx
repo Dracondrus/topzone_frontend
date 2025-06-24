@@ -6,6 +6,9 @@ import ReduxProvider from "@/redux/provider";
 import "slick-carousel/slick/slick.css";
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
+import {NextIntlClientProvider, hasLocale} from 'next-intl';
+import {notFound} from 'next/navigation';
+import {routing} from '@/i18n/routing';
 import "swiper/css/bundle";
 import "./globals.scss";
 
@@ -29,53 +32,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Top Zone – Real Estate Platform",
-  description:
-    "Top Zone is a modern, customizable Next.js platform for real estate listings, agencies, and property businesses. Explore properties with ease.",
-  keywords: [
-    "real estate",
-    "property listings",
-    "buy apartment",
-    "rent house",
-    "Next.js real estate site",
-    "Top Zone",
-  ],
-  authors: [{ name: "TopZone Team", url: "https://topzone.uz" }],
-  openGraph: {
-    title: "Top Zone – Modern Real Estate Listings",
-    description:
-      "Explore, buy or rent properties effortlessly with Top Zone – a sleek real estate platform powered by Next.js.",
-    url: "https://topzone.uz",
-    siteName: "Top Zone",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Top Zone Real Estate",
-      },
-    ],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Top Zone – Real Estate Made Simple",
-    description:
-      "Find your dream home or investment property with Top Zone.",
-    creator: "@topzone",
-    images: ["/og-image.jpg"],
-  },
+  title: "Top Zone",
+  description: "Bhumi is a modern, highly customizable Next.js theme designed for real estate businesses, agencies, and property listings, offering a seamless and user-friendly experience.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{locale: string}>;
 }>) {
+    const {locale} = await params;
+
   return (
-    <html lang="en">
+    <html lang={locale  }>
       <body suppressHydrationWarning className={`${plusJakartaSans.variable} ${geistSans.variable} ${geistMono.variable}`}>
-        <ReduxProvider>
+        <NextIntlClientProvider>
+             <ReduxProvider>
           <VideoProvider>
             <AppProvider>
               {children}
@@ -84,6 +58,8 @@ export default function RootLayout({
             <GlobalVideoModal />
           </VideoProvider>
         </ReduxProvider>
+        </NextIntlClientProvider>
+     
       </body>
     </html>
   );

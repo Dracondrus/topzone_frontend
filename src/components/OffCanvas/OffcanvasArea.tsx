@@ -1,6 +1,6 @@
-import logoWhite from '../../../public/assets/img/logo/logo-white.png';
+import logoWhite from '../../../public/assets/topzone.png';
 import useGlobalContext from '@/hooks/useContext';
-import OffcanvasMenus from './OffcanvasMenus';
+// import OffcanvasMenus from './OffcanvasMenus';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -25,16 +25,16 @@ export default function OffcanvasArea() {
                         <div className="offcanvas__top mb-40">
                             <div className="offcanvas__logo">
                                 <Link href="/">
-                                    <Image src={logoWhite} alt="logo" />
+                                    <Image src={logoWhite} alt="logo" />&nbsp;&nbsp;<b style={{fontSize: 20,color:"#fff",paddingLeft:10}}>Top Zone</b>
                                 </Link>
                             </div>
                         </div>
 
-                        <div className="tp-offcanvas-menu fix d-xl-none mb-30">
+                        {/* <div className="tp-offcanvas-menu fix d-xl-none mb-30">
                             <nav>
                                 <OffcanvasMenus />
                             </nav>
-                        </div>
+                        </div> */}
                         <div className="offcanvas__contact d-none d-xl-block">
                             <div className="offcanvas__text mb-30">
                                 <p>The design readable content of a page hen looking at its layout The point our of using Movie template</p>
