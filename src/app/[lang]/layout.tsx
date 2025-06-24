@@ -7,8 +7,7 @@ import "slick-carousel/slick/slick.css";
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
-import {notFound} from 'next/navigation';
-import {routing} from '@/i18n/routing';
+
 import "swiper/css/bundle";
 import "./globals.scss";
 
